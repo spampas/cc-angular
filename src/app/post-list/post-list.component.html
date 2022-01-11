@@ -1,0 +1,12 @@
+<app-top-bar></app-top-bar>
+
+<div class="flex-container">
+  <div *ngFor="let post of posts | async">
+    <h3>
+      <a [title]="post.title + 'details'" [routerLink]="[post.id]">
+        {{ post.title }} | {{ post.userId }}
+      </a>
+    </h3>
+    <p> {{post.body}} </p>
+  </div>
+</div>

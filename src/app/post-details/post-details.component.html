@@ -1,0 +1,11 @@
+<app-top-bar></app-top-bar>
+
+<div *ngIf="post">
+  <h1>{{ post.title }}</h1>
+  <h3>by {{ post.userId }}</h3>
+  <p>{{ post.body }}</p>
+
+  <h3>Comments</h3>
+
+  <app-comment-list></app-comment-list>
+</div>

@@ -1,0 +1,20 @@
+<div>
+  <div *ngFor="let comment of comments">
+    <h2>{{ comment.email }}</h2>
+    <p>{{ comment.body }}</p>
+  </div>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <h3>Add a Comment:</h3>
+      <label for="body"> Body: </label>
+      <textarea
+        id="username"
+        rows="10"
+        cols="120"
+        placeholder="Write comment here..."
+        formControlName="body"
+      ></textarea>
+    </div>
+    <button class="button" type="submit" (ngSubmit)="onSubmit()">Submit</button>
+  </form>
+</div>
