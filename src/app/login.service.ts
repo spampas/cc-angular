@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 import { User, users } from './users';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  user: User | undefined;
+  private user: User | undefined;
   logged: boolean = false;
 
   constructor() {}
@@ -19,7 +21,7 @@ export class LoginService {
     }
   }
 
-  getLoggedUser() {
+  public get getLoggedUser() {
     return this.user;
   }
 

@@ -42,8 +42,10 @@ export class CommentListComponent implements OnInit {
       postId: this.postId,
       id: 0,
       name: this.commentForm.value.body,
-      email: this.loginService.getLoggedUser().username,
+      email: 'gino pastino',
       body: this.commentForm.value.body,
     };
+
+    this.commentService.addComment(comment);
   }
 }

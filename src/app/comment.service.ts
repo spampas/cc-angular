@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 export class CommentService {
   constructor(private http: HttpClient) {}
 
-  getComments(postId: number) {
+  getComments(postId: number): Observable<Comment[]> {
     return this.http.get<Comment[]>(
       'https://jsonplaceholder.typicode.com/comments?postId=' +
         postId.toString()
@@ -20,6 +20,9 @@ export class CommentService {
   }
 
   addComment(comment: Comment): Observable<Comment> {
-    return this.http.post<Comment>("https://jsonplaceholder.typicode.com/comments", comment)
+    return this.http.post<Comment>(
+      'https://jsonplaceholder.typicode.com/comments',
+      comment
+    );
   }
 }
